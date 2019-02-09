@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-4 border-right">
+    <h4>What burger do you want to eat?</h4>
+    <form class="form-group">
+      <input class="form-control my-4" type="text" id="add-burger">
+      <button class="btn btn-outline-warning" type="submit" id="submit-burger">Add
+        burger</button>
+    </form>
+    <button class="btn btn-outline-primary" type="submit" id="trust-chef">Trust the chef!</button>
+  </div>
+  <div class="col-4 border-right">
+    <h3 class="text-center">Burgers to eat</h3>
+    {{#each burgers}}
+      {{#unless completed}}
+      <div class="card mx-auto" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{burger_name}}</h5>
+          <button data-id="{{id}}" class="eat-burger btn btn-warning">Devour the burger!</button>
+          <button data-id="{{id}}" class="discard-burger btn btn-danger">Throw away</button>
+        </div>
+        </div>
+      {{/unless}}
+    {{/each}}
+  </div>
+  <div class="col-4">
+    <h3>Devoured burgers</h3>
+      {{#each burgers}}
+        {{#if completed}}
+          <div class="card mx-auto" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{burger_name}}</h5>
+              <button data-id="{{id}}" class="discard-burger btn btn-danger">Throw away your trash</button>
+            </div>
+          </div>
+        {{/if}}
+      {{/each}}
+  </div>    
+</div>
