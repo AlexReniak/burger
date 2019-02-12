@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  // Add a new burger function
   $("#submit-burger").on("click", function(event) {
     event.preventDefault();
     
@@ -17,7 +18,7 @@ $(document).ready(function() {
     });
   });
   
-
+  // Eat burger function
   $(".eat-burger").on("click", function() {
 
     const burgerID = $(this).data().id;
@@ -31,6 +32,7 @@ $(document).ready(function() {
     });
   });
 
+  // Discard burger function
   $(".discard-burger").on("click", function () {
 
     const burgerID = $(this).data().id;
@@ -40,6 +42,18 @@ $(document).ready(function() {
     }).then(function (data) {
       location.reload();
     });
+  });
 
-  })
+  // Trust the chef function INCOMPLETE
+  // $("#trust-chef").on("click", function() {
+
+  //   $.ajax({
+  //     url: "/api/chefsburger",
+  //     method: "GET"
+  //   }).then(function(data) {
+  //     location.reload();
+
+  //   })
+  // });
+
 });

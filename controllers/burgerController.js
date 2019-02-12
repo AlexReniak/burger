@@ -37,5 +37,24 @@ module.exports = {
       }
       console.log(res.json(burgersDB));
     })
-  }
+  },
+
+  // Unfinished functions
+  // trustChef: function(req, res) {
+  //   db.query("SELECT * FROM chef_burgers ORDER BY RAND() LIMIT 1", function(err, chefsDB) {
+  //     if (err) {
+  //       throw err;
+  //     }
+  //     console.log(res.json(chefsDB))
+  //   })
+  // },
+
+  // eatChefBurger: function(req, res) {
+  //   db.query("UPDATE chef_burgers SET completed = true WHERE id = ?", req.params.id, function(err, chefsDB) {
+  //     if (err) {
+  //       throw err;
+  //     }
+  //     console.log(res.json(chefsDB));
+  //   })
+  // }
 };

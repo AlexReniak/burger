@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const db = require("../../config/connection");
 
-// Set up home page route to load handlebars template w/ date from db
+
 router
   .route("/")
   .get(function(req, res) {
@@ -12,6 +12,15 @@ router
       }
       res.render("burgers", {burgers: burgersDB});
     });
-  });
+  })
+
+  .get(function(req, res) {
+    db.query("SELECT * FROM chefs_burger ORDER BY RAND() LIMIT 1", function(err, chefsDB) {
+      if (err) {
+        throw err;
+      }
+      res.render("burgers", {burgers: chefsDB})
+    })
+  })
 
 module.exports = router;

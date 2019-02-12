@@ -5,8 +5,7 @@ const burgerController = require("../../controllers/burgerController");
 router
   .route("/")
   .get(burgerController.getAll)
-  .post(burgerController.createBurger);
-
+  .post(burgerController.createBurger)
 
 // delete burger by id
 router

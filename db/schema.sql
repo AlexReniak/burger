@@ -10,3 +10,10 @@ CREATE TABLE burgers (
   completed BOOLEAN DEFAULT false,
   PRIMARY KEY (id)
 );
+
+CREATE TABLE chef_burgers (
+  id INTEGER(11) NOT NULL AUTO_INCREMENT,
+  burger_name VARCHAR(255) NOT NULL,
+  completed BOOLEAN DEFAULT false,
+  PRIMARY KEY (id)
+);
